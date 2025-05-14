@@ -25,5 +25,6 @@ addBookToLibrary("Lord of Rings", "Tolkien", '335', 'not read yet')
 const mainContainer = document.querySelector("body")
 userBooksLibrary.forEach(element => {
     let card = document.createElement("div")
+    card.textContent = element.title;
     mainContainer.appendChild(card)
 });
