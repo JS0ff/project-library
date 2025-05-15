@@ -5,15 +5,7 @@ body{
     background-color: rgb(31, 31, 31);
 }
 
-.book-card{
-    border: solid 2px rgb(151, 151, 151);
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(41, 41, 87);
-    color: ghostwhite;
-}
-.mainBooksContainer{
+.book-collection{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     height: 6rem;
@@ -28,3 +20,8 @@ form{
 ::backdrop {
     background-color: rgba(13, 29, 56, 0.401);
   }
+
+.book{
+    background-color: rgb(27, 35, 74);
+    color: ghostwhite;
+}
