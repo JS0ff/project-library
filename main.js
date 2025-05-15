@@ -32,3 +32,18 @@ userBooksLibrary.forEach(element => {
     card.classList.add("book-card")
     bookCardContainer.appendChild(card)
 });
+
+//Create the function to open and close the dialog window
+const dialog = document.querySelector("dialog");
+const showButton = document.querySelector("dialog + button");
+const closeButton = document.querySelector("dialog button");
+console.log(showButton)
+console.log(closeButton)
+
+showButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+closeButton.addEventListener("click", () => {
+  dialog.close();
+});
