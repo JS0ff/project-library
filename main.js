@@ -24,10 +24,8 @@ addBookToLibrary("Lord of Rings", "Tolkien", '335', 'not read yet')
 
 
 // Create containers-cards for every book
-const body = document.querySelector("body")
-const bookCardContainer = document.createElement("div");
+const bookCardContainer = document.querySelector(".book-collection");
 bookCardContainer.classList.add("mainBooksContainer");
-body.appendChild(bookCardContainer)
 userBooksLibrary.forEach(element => {
     let card = document.createElement("div")
     card.textContent = element.title;
