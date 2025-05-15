@@ -13,20 +13,21 @@
 
         </div>
     </div>
-    <dialog>
+    <dialog id="libDialog">
         <form method="dialog" >
             <label for="book-author">Enter the book author:</label>
-            <input type="text">
+            <input id="author" type="text">
             <label for="book-title">Enter the book title:</label>
-            <input type="text">
+            <input id="title" type="text">
             <label for="book-pages">Enter the amount of pages:</label>
-            <input type="number">
+            <input id="pages" type="number">
             <label for="book-pages">Did you finish it?</label>
-            <input type="checkbox">
-          <button type="submit">Submit</button>
-          <button>Close</button>
+            <input checked id="finished" type="checkbox">
+            <button value="cancel" formmethod="dialog">Cancel</button>
+            <button id="confirmBtn" value="default">Confirm</button>
         </form>
       </dialog>
-      <button>Add a new book</button>
+      <button id="showDialog">Add a new book</button>
+      <output></output>
 </body>
 </html>
