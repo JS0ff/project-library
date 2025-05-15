@@ -20,11 +20,17 @@ function addBookToLibrary(...args) {
 
 addBookToLibrary("Hobbit", "Tolkien", '295', 'read')
 addBookToLibrary("Lord of Rings", "Tolkien", '335', 'not read yet')
+addBookToLibrary("Lord of Rings", "Tolkien", '335', 'not read yet')
+
 
 // Create containers-cards for every book
-const mainContainer = document.querySelector("body")
+const body = document.querySelector("body")
+const bookCardContainer = document.createElement("div");
+bookCardContainer.classList.add("mainBooksContainer");
+body.appendChild(bookCardContainer)
 userBooksLibrary.forEach(element => {
     let card = document.createElement("div")
     card.textContent = element.title;
-    mainContainer.appendChild(card)
+    card.classList.add("book-card")
+    bookCardContainer.appendChild(card)
 });
