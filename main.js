@@ -34,16 +34,33 @@ userBooksLibrary.forEach(element => {
 });
 
 //Create the function to open and close the dialog window
-const dialog = document.querySelector("dialog");
-const showButton = document.querySelector("dialog + button");
-const closeButton = document.querySelector("dialog button");
-console.log(showButton)
-console.log(closeButton)
+const showButton = document.getElementById("showDialog");
+const libDialog = document.getElementById("libDialog");
+const outputBox = document.querySelector("output")
+const confirmBtn = document.querySelector("#confirmBtn")
+
+const booksAuthor = document.querySelector("#author")
+const booksTitle = document.querySelector("#title")
+const bookPages = document.querySelector("#pages")
+const bookFinished = document.querySelector("#finished")
+
 
 showButton.addEventListener("click", () => {
-  dialog.showModal();
+  libDialog.showModal();
 });
 
-closeButton.addEventListener("click", () => {
-  dialog.close();
-});
+libDialog.addEventListener("close", (e) => {
+    outputBox.value = 
+        libDialog.returnValue === "default" 
+            ? "No return value."
+            : `ReturnValue: ${libDialog.returnValue}.`;
+})
+
+confirmBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    libDialog.close(bookFinished.value)
+    if(booksTitle.value){
+        addBookToLibrary(booksTitle.value)
+        console.log("works")
+    }
+})
