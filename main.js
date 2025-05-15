@@ -18,49 +18,37 @@ function addBookToLibrary(...args) {
     userBooksLibrary.push(book);
 }
 
-addBookToLibrary("Hobbit", "Tolkien", '295', 'read')
-addBookToLibrary("Lord of Rings", "Tolkien", '335', 'not read yet')
-addBookToLibrary("Lord of Rings", "Tolkien", '335', 'not read yet')
-
-
-// Create containers-cards for every book
+//Create an array that loops through the "userBooksLibrary"
+//and displays every book item in their own card
 const bookCardContainer = document.querySelector(".book-collection");
-bookCardContainer.classList.add("mainBooksContainer");
-userBooksLibrary.forEach(element => {
-    let card = document.createElement("div")
-    card.textContent = element.title;
-    card.classList.add("book-card")
-    bookCardContainer.appendChild(card)
-});
 
-//Create the function to open and close the dialog window
-const showButton = document.getElementById("showDialog");
-const libDialog = document.getElementById("libDialog");
-const outputBox = document.querySelector("output")
-const confirmBtn = document.querySelector("#confirmBtn")
+function createBooksContainers(){
+    userBooksLibrary.forEach(element => {
+        let newCard = document.createElement("div")
+        let newCardAuthor = document.createElement("div")
+        let newCardTitle = document.createElement("div")
+        let newCardPages = document.createElement("div")
+        let newCardFinished = document.createElement("div")
 
-const booksAuthor = document.querySelector("#author")
-const booksTitle = document.querySelector("#title")
-const bookPages = document.querySelector("#pages")
-const bookFinished = document.querySelector("#finished")
+        newCardAuthor.textContent = "Author: " + element.author;
+        newCardAuthor.classList.add("book-author")
+        newCardTitle.textContent = "Title: " + element.title;
+        newCardTitle.classList.add("book-title")
+        newCardPages.textContent = "Total Pages" + element.pages;
+        newCardPages.classList.add("book-pages")
+        newCardFinished.textContent = "Reading Status: " +  element.read;
+        newCardFinished.classList.add("book-finished")
 
+        newCard.appendChild(newCardAuthor)
+        newCard.appendChild(newCardTitle)
+        newCard.appendChild(newCardPages)
+        newCard.appendChild(newCardFinished)
+        newCard.classList.add("book")
+        bookCardContainer.append(newCard)
+    });
+}
 
-showButton.addEventListener("click", () => {
-  libDialog.showModal();
-});
-
-libDialog.addEventListener("close", (e) => {
-    outputBox.value = 
-        libDialog.returnValue === "default" 
-            ? "No return value."
-            : `ReturnValue: ${libDialog.returnValue}.`;
-})
-
-confirmBtn.addEventListener("click", (event) => {
-    event.preventDefault();
-    libDialog.close(bookFinished.value)
-    if(booksTitle.value){
-        addBookToLibrary(booksTitle.value)
-        console.log("works")
-    }
-})
+addBookToLibrary("Hobbit", "Tolkien", '295', 'read')
+addBookToLibrary("Hobbit", "Tolkien", '295', 'read')
+addBookToLibrary("Hobbit", "Tolkien", '295', 'reading')
+createBooksContainers()
