@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+:root,
+body{
+    min-height: 100%;
+    height: 100%;
+}
+
+.book-card{
+    border: solid 2px black;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.mainBooksContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    height: 6rem;
+    gap: 5px;
+}
