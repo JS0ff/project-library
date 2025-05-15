@@ -2,14 +2,16 @@
 :root,
 body{
     min-height: 100%;
-    height: 100%;
+    background-color: rgb(31, 31, 31);
 }
 
 .book-card{
-    border: solid 2px black;
+    border: solid 2px rgb(151, 151, 151);
     display: grid;
     align-items: center;
     justify-content: center;
+    background-color: rgb(41, 41, 87);
+    color: ghostwhite;
 }
 .mainBooksContainer{
     display: grid;
@@ -22,3 +24,7 @@ form{
     display: flex;
     flex-direction: column;
 }
+
+::backdrop {
+    background-color: rgba(13, 29, 56, 0.401);
+  }
