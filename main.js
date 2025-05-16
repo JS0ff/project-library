@@ -34,7 +34,7 @@ function createBooksContainers(){
         newCardAuthor.classList.add("book-author")
         newCardTitle.textContent = "Title: " + element.title;
         newCardTitle.classList.add("book-title")
-        newCardPages.textContent = "Total Pages" + element.pages;
+        newCardPages.textContent = "Total Pages: " + element.pages;
         newCardPages.classList.add("book-pages")
         newCardFinished.textContent = "Reading Status: " +  element.read;
         newCardFinished.classList.add("book-finished")
@@ -48,7 +48,27 @@ function createBooksContainers(){
     });
 }
 
+
+//Create variable to represent the button "add the new book"
+const dialog = document.querySelector("dialog");
+const showButton = document.querySelector("dialog + button")
+const closeButton = document.querySelector("dialog  button")
+
+// Create eventlistener for clicking button
+//Button to open the modal
+showButton.addEventListener("click", function(){
+    dialog.showModal();
+})
+//Button to close the modal
+closeButton.addEventListener("click", function(){
+    dialog.close();
+})
+// Create two button inside the form: submit and cancel
+//
+
 addBookToLibrary("Hobbit", "Tolkien", '295', 'read')
-addBookToLibrary("Hobbit", "Tolkien", '295', 'read')
-addBookToLibrary("Hobbit", "Tolkien", '295', 'reading')
+addBookToLibrary("Spiderman", "Tolkien", '215', 'not started')
+addBookToLibrary("Batman", "noname", '535', 'reading')
+
+
 createBooksContainers()
