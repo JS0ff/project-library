@@ -22,8 +22,12 @@
             <label for="book">Enter the amount of pages:</label>
             <input id="book-pages" type="number">
             <label for="book">Did you finish it?</label>
-            <input checked id="book-finished" type="checkbox">
-            <select name="" id=""></select>
+            <select name="book-status" id="book-status">
+                <option value="default">Choose…</option>
+                <option value="planning">Planning</option>
+                <option value="reading">Reading</option>
+                <option value="finished">Finished</option>
+            </select>
             <button value="cancel" formmethod="dialog">Cancel</button>
             <button id="confirmBtn" value="default">Confirm</button>
         </form>

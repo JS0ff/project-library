@@ -72,7 +72,7 @@ const libDialog = document.querySelector("#libDialog")
 const bookAuthor = document.querySelector("#book-author")
 const bookTitle = document.querySelector("#book-title")
 const bookPages = document.querySelector("#book-pages")
-const bookFinished = document.querySelector("#book-finished")
+const bookFinished = document.querySelector("#book-status")
 confirmBtn.addEventListener("click", function(){
     addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookFinished.value)
     console.log(userBooksLibrary)
