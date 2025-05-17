@@ -42,10 +42,20 @@ function createBooksContainers(){
         newCardFinished.textContent = "Reading Status: " +  userBook[0].read;
         newCardFinished.classList.add("book-finished")
 
+        // Add button to remove the element from the library
+        let removeButton = document.createElement("button");
+        removeButton.textContent = "Remove"
+        removeButton.classList.add("remove-button")
+        removeButton.addEventListener("click", function(){
+            bookCardContainer.removeChild(newCard)
+        })
+
+        // Append all child element to the book container
         newCard.appendChild(newCardAuthor)
         newCard.appendChild(newCardTitle)
         newCard.appendChild(newCardPages)
         newCard.appendChild(newCardFinished)
+        newCard.appendChild(removeButton)
         newCard.classList.add("book")
         bookCardContainer.append(newCard)
 }
