@@ -1,4 +1,4 @@
-const userBooksLibrary = []; 
+let userBooksLibrary = []; 
 
 // Constructor to save the book
 function Book(title, author, pages, read) {
@@ -48,6 +48,7 @@ function createBooksContainers(){
         removeButton.classList.add("remove-button")
         removeButton.addEventListener("click", function(){
             bookCardContainer.removeChild(newCard)
+            userBooksLibrary = userBooksLibrary.filter(element => element.id != userBook[0].id )
         })
 
         // Append all child element to the book container
@@ -57,6 +58,7 @@ function createBooksContainers(){
         newCard.appendChild(newCardFinished)
         newCard.appendChild(removeButton)
         newCard.classList.add("book")
+        newCard.setAttribute("data-id", userBook[0].id)
         bookCardContainer.append(newCard)
 }
 
