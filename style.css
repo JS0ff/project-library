@@ -2,6 +2,7 @@
 :root,
 body{
     min-height: 100%;
+    height: 100%;
     background-color: rgb(31, 31, 31);
 }
 
@@ -24,4 +25,13 @@ form{
 .book{
     background-color: rgb(27, 35, 74);
     color: ghostwhite;
+}
+.library{
+    display: grid;
+    border: 2px solid peachpuff;
+    height: 10rem;
+    overflow: scroll;
+}
+#showDialog{
+    height: 30px;
 }
