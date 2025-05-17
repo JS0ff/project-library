@@ -9,7 +9,7 @@ body{
 .book-collection{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    height: 6rem;
+    height: 10rem;
     gap: 5px;
 }
 
@@ -29,7 +29,7 @@ form{
 .library{
     display: grid;
     border: 2px solid peachpuff;
-    height: 10rem;
+    height: 20rem;
     overflow: scroll;
 }
 #showDialog{
