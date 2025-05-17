@@ -23,20 +23,23 @@ function addBookToLibrary(...args) {
 const bookCardContainer = document.querySelector(".book-collection");
 
 function createBooksContainers(){
-    userBooksLibrary.forEach(element => {
+    console.log(userBooksLibrary.slice(userBooksLibrary.length - 1))
+
         let newCard = document.createElement("div")
         let newCardAuthor = document.createElement("div")
         let newCardTitle = document.createElement("div")
         let newCardPages = document.createElement("div")
         let newCardFinished = document.createElement("div")
 
-        newCardAuthor.textContent = "Author: " + element.author;
+        let userBook = userBooksLibrary.slice(userBooksLibrary.length - 1);
+
+        newCardAuthor.textContent = "Author: " + userBook[0].author;
         newCardAuthor.classList.add("book-author")
-        newCardTitle.textContent = "Title: " + element.title;
+        newCardTitle.textContent = "Title: " + userBook[0].title;
         newCardTitle.classList.add("book-title")
-        newCardPages.textContent = "Total Pages: " + element.pages;
+        newCardPages.textContent = "Total Pages: " + userBook[0].pages;
         newCardPages.classList.add("book-pages")
-        newCardFinished.textContent = "Reading Status: " +  element.read;
+        newCardFinished.textContent = "Reading Status: " +  userBook[0].read;
         newCardFinished.classList.add("book-finished")
 
         newCard.appendChild(newCardAuthor)
@@ -45,9 +48,7 @@ function createBooksContainers(){
         newCard.appendChild(newCardFinished)
         newCard.classList.add("book")
         bookCardContainer.append(newCard)
-    });
 }
-
 
 //Create variable to represent the button "add the new book"
 const dialog = document.querySelector("dialog");
@@ -64,11 +65,17 @@ closeButton.addEventListener("click", function(){
     dialog.close();
 })
 // Create two button inside the form: submit and cancel
-//
+const confirmBtn = document.querySelector("#confirmBtn")
+const libDialog = document.querySelector("#libDialog")
 
-addBookToLibrary("Hobbit", "Tolkien", '295', 'read')
-addBookToLibrary("Spiderman", "Tolkien", '215', 'not started')
-addBookToLibrary("Batman", "noname", '535', 'reading')
-
-
-createBooksContainers()
+// Create all input variable to show data inside
+const bookAuthor = document.querySelector("#book-author")
+const bookTitle = document.querySelector("#book-title")
+const bookPages = document.querySelector("#book-pages")
+const bookFinished = document.querySelector("#book-finished")
+confirmBtn.addEventListener("click", function(){
+    addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookFinished.value)
+    console.log(userBooksLibrary)
+    libDialog.close()
+    createBooksContainers()
+})
