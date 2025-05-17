@@ -78,4 +78,10 @@ confirmBtn.addEventListener("click", function(){
     console.log(userBooksLibrary)
     libDialog.close()
     createBooksContainers()
+
+    // Clear the data for the new book
+    bookAuthor.value = "";
+    bookTitle.value = "";
+    bookPages.value = "";
+    bookFinished.value = "";
 })
