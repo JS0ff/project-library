@@ -51,12 +51,18 @@ function createBooksContainers(){
             userBooksLibrary = userBooksLibrary.filter(element => element.id != userBook[0].id )
         })
 
+        // Add button to change the reading status
+        let readingStatusBtn = document.createElement("button");
+        readingStatusBtn.classList.add("reading-status");
+        readingStatusBtn.textContent = "Change Reading Status";
+
         // Append all child element to the book container
         newCard.appendChild(newCardAuthor)
         newCard.appendChild(newCardTitle)
         newCard.appendChild(newCardPages)
         newCard.appendChild(newCardFinished)
         newCard.appendChild(removeButton)
+        newCard.appendChild(readingStatusBtn)
         newCard.classList.add("book")
         newCard.setAttribute("data-id", userBook[0].id)
         bookCardContainer.append(newCard)
