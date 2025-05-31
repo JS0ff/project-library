@@ -16,3 +16,23 @@ function addBookToLibrary(...args) {
     //Pushes to the library array
     myLibrary.push(book)
 }
+
+addBookToLibrary("The Hobbit", "Tolkien", "192", "not read yet")
+addBookToLibrary("The Hobbit", "Tolkien", "192", "not read yet")
+addBookToLibrary("The Hobbit", "Tolkien", "192", "not read yet")
+addBookToLibrary("The Hobbit", "Tolkien", "192", "not read yet")
+
+
+// Create a function that loops through the array and displays each book on the page
+const mainContainer = document.querySelector("main")
+
+function displayBooks(){
+    for (const element of myLibrary) {
+        let bookCard = document.createElement("div")
+        bookCard.classList.add("book-card");
+        bookCard.textContent = element.title
+        mainContainer.appendChild(bookCard)
+    }
+}
+
+displayBooks()
