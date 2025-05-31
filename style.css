@@ -16,3 +16,8 @@ header h1{
     color: #F3F3E0;
     padding: 20px;
 }
+main{
+    border: solid 2px peachpuff;
+    min-height: 50rem;
+    background-color: #333446;
+}
