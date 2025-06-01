@@ -23,7 +23,7 @@ const mainContainer = document.querySelector("main")
 function displayBooks(){
     for(let i = 0; i < myLibrary.length; i++){
         if(i == myLibrary.length - 1){
-            
+
         // Create book card element
         let bookCard = document.createElement("div")
         bookCard.classList.add("book-card");
@@ -78,7 +78,6 @@ closeButton.addEventListener("click", () => {
     dialog.close();
 })
 
-
 createButton.addEventListener("click", (event) => {
     event.preventDefault();
     dialog.close(
@@ -87,6 +86,10 @@ createButton.addEventListener("click", (event) => {
             bookAuthor.value, 
             bookPages.value, 
             bookProgress.value),
-        displayBooks()
+        displayBooks(), 
+            bookTittle.value = "", 
+            bookAuthor.value = "", 
+            bookPages.value = "", 
+            bookProgress.value = "reading"
     )
 })
