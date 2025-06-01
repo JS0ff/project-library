@@ -17,17 +17,13 @@ function addBookToLibrary(...args) {
     myLibrary.push(book)
 }
 
-addBookToLibrary("The Hobbit", "Tolkien", "192", "not read yet")
-addBookToLibrary("The Hobbit", "Tolkien", "192", "not read yet")
-addBookToLibrary("The Hobbit", "Tolkien", "192", "not read yet")
-addBookToLibrary("The Hobbit", "Tolkien.j", "132", "not read yet")
-
-
 // Create a function that loops through the array and displays each book on the page
 const mainContainer = document.querySelector("main")
 
 function displayBooks(){
-    for (const element of myLibrary) {
+    for(let i = 0; i < myLibrary.length; i++){
+        if(i == myLibrary.length - 1){
+            
         // Create book card element
         let bookCard = document.createElement("div")
         bookCard.classList.add("book-card");
@@ -35,22 +31,22 @@ function displayBooks(){
         // Book Title
         let bookTitle = document.createElement("p");
         bookTitle.classList.add("title")
-        bookTitle.textContent = `Title: ${element.title}`
+        bookTitle.textContent = `Title: ${myLibrary[i].title}`
 
         // Book Author
         let bookAuthor = document.createElement('p')
         bookAuthor.classList.add("author")
-        bookAuthor.textContent = `Author: ${element.author}`
+        bookAuthor.textContent = `Author: ${myLibrary[i].author}`
 
         // Book Pages
         let bookPages = document.createElement('p');
         bookPages.classList.add("pages");
-        bookPages.textContent = `Author: ${element.pages}`
+        bookPages.textContent = `Author: ${myLibrary[i].pages}`
 
         // Book Progress
         let bookProgress = document.createElement("p");
         bookProgress.classList.add("progress")
-        bookProgress.textContent = `Progress: ${element.read}`
+        bookProgress.textContent = `Progress: ${myLibrary[i].read}`
         
         // Append all children to the bookCard element
         bookCard.appendChild(bookTitle)
@@ -60,15 +56,19 @@ function displayBooks(){
 
         // Save to the main container
         mainContainer.appendChild(bookCard)
+        }
+        }
     }
-}
-
-displayBooks()
-
 
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("dialog + button");
-const closeButton = document.querySelector("dialog button");
+const closeButton = document.querySelector("#close-button");
+const createButton = document.querySelector("#create-button");
+
+const bookTittle = document.querySelector("#title")
+const bookAuthor = document.querySelector("#author")
+const bookPages = document.querySelector("#pages")
+const bookProgress = document.querySelector("#progress")
 
 showButton.addEventListener("click", () => {
     dialog.showModal();
@@ -76,4 +76,17 @@ showButton.addEventListener("click", () => {
 
 closeButton.addEventListener("click", () => {
     dialog.close();
+})
+
+
+createButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    dialog.close(
+        addBookToLibrary(
+            bookTittle.value, 
+            bookAuthor.value, 
+            bookPages.value, 
+            bookProgress.value),
+        displayBooks()
+    )
 })
