@@ -1,90 +1,90 @@
-*{
-    padding: 0px;
-    margin: 0px;
+* {
+  padding: 0px;
+  margin: 0px;
 }
-:root{
-    height: 100%;
+:root {
+  height: 100%;
 }
-body{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    min-height: 100%;
-    background-color: #183B4E;
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  min-height: 100%;
+  background-color: #183b4e;
 }
-header h1{
-    display: flex;
-    justify-content: center;
-    color: #F3F3E0;
-    padding: 20px;
+header h1 {
+  display: flex;
+  justify-content: center;
+  color: #f3f3e0;
+  padding: 20px;
 }
-main{
-    border: solid 2px peachpuff;
-    min-height: 50rem;
-    background-color: #333446;
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    border-radius: 20px;
-    padding: 25px;
-    gap: 1rem;
+main {
+  border: solid 2px peachpuff;
+  min-height: 50rem;
+  background-color: #333446;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  border-radius: 20px;
+  padding: 25px;
+  gap: 1rem;
 }
-.book-card{
-    font-size: 1.1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #F3F3E0;
-    border: #979797 2px solid;
-    border-radius: 15px;
-    gap: 1rem;
-}
-
-#newBook{
-    height: 4rem;
-    width: 6rem;
-    margin: 10px;
-    border-radius: 15px;
-    font-size: 16px;
+.book-card {
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #f3f3e0;
+  border: #979797 2px solid;
+  border-radius: 15px;
+  gap: 1rem;
 }
 
-header{
-    display: flex;
+#newBook {
+  height: 4rem;
+  width: 6rem;
+  margin: 10px;
+  border-radius: 15px;
+  font-size: 16px;
 }
 
-dialog{
-    width: 20rem;
-    height: 18rem;
-    position: absolute;
-    justify-self: center;
-    align-self: center;
-    padding: 10px;
+header {
+  display: flex;
 }
-.form{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-dialog p{
-    font-size: 25px;
-}
-dialog p input{
-    width: 10rem;
-    font-size: 18px;
-}
-dialog form{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-dialog .buttons{
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
 
+dialog {
+  width: 20rem;
+  height: 18rem;
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  padding: 10px;
 }
-.buttons button{
-    height: 2rem;
-    border-radius: 10px;
-    font-size: 17px;
+.form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+dialog p {
+  font-size: 25px;
+}
+dialog p input {
+  width: 10rem;
+  font-size: 18px;
+}
+dialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+dialog .buttons {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.buttons button {
+  height: 2rem;
+  border-radius: 10px;
+  font-size: 17px;
 }
