@@ -86,4 +86,5 @@ dialog .buttons{
 .buttons button{
     height: 2rem;
     border-radius: 10px;
+    font-size: 17px;
 }
