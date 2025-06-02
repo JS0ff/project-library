@@ -59,11 +59,24 @@ function displayBooks() {
         myLibrary = myLibrary.filter((item) => item.id != bookCard.dataset.id);
       });
 
+      //Add change reading status button
+      let readStatus = document.createElement("button");
+      readStatus.classList.add("status-button");
+      readStatus.textContent = "Change Status";
+
+      // Change Reading status for every click
+      readStatus.addEventListener("click", function (event) {
+        myLibrary[i].read = myLibrary[i].changeReadingStatus(myLibrary[i].read);
+        let currentStatus = myLibrary[i].read;
+        bookProgress.textContent = `Progress: ${currentStatus}`;
+      });
+
       // Append all children to the bookCard element
       bookCard.appendChild(bookTitle);
       bookCard.appendChild(bookAuthor);
       bookCard.appendChild(bookPages);
       bookCard.appendChild(bookProgress);
+      bookCard.appendChild(readStatus);
       bookCard.appendChild(deleteBtn);
 
       //Set an id of a book in the array
@@ -113,3 +126,18 @@ createButton.addEventListener("click", (event) => {
     (bookProgress.value = "reading")
   );
 });
+
+//Connect prototype function to the Book constructor
+Book.prototype.changeReadingStatus = function (readingStatus) {
+  if (readingStatus === "reading") {
+    readingStatus = "finished";
+    return readingStatus;
+  } else if (readingStatus === "finished") {
+    readingStatus = "planning";
+    return readingStatus;
+  } else if (readingStatus === "planning") {
+    readingStatus = "reading";
+    return readingStatus;
+  }
+  console.log(readingStatus);
+};
