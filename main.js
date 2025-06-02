@@ -47,11 +47,17 @@ function displayBooks() {
       bookProgress.classList.add("progress");
       bookProgress.textContent = `Progress: ${myLibrary[i].read}`;
 
+      //Add Delete button for every card
+      let deleteBtn = document.createElement("button");
+      deleteBtn.classList.add("delete-button");
+      deleteBtn.textContent = "Delete";
+
       // Append all children to the bookCard element
       bookCard.appendChild(bookTitle);
       bookCard.appendChild(bookAuthor);
       bookCard.appendChild(bookPages);
       bookCard.appendChild(bookProgress);
+      bookCard.appendChild(deleteBtn);
 
       // Save to the main container
       mainContainer.appendChild(bookCard);
@@ -96,4 +102,3 @@ createButton.addEventListener("click", (event) => {
     (bookProgress.value = "reading")
   );
 });
-``;
