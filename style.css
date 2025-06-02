@@ -88,9 +88,10 @@ dialog .buttons {
   border-radius: 10px;
   font-size: 17px;
 }
-.delete-button {
+
+.book-card button {
   height: 2rem;
-  width: 4rem;
+  width: 10rem;
   border-radius: 10px;
   font-size: 17px;
 }
