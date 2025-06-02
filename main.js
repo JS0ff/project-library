@@ -99,6 +99,7 @@ createButton.addEventListener("click", (event) => {
     (bookTittle.value = ""),
     (bookAuthor.value = ""),
     (bookPages.value = ""),
+    //Default value of every book
     (bookProgress.value = "reading")
   );
 });
