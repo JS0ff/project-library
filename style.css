@@ -88,3 +88,9 @@ dialog .buttons {
   border-radius: 10px;
   font-size: 17px;
 }
+.delete-button {
+  height: 2rem;
+  width: 4rem;
+  border-radius: 10px;
+  font-size: 17px;
+}
