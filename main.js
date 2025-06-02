@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 
 //Create a constructor for books
 function Book(title, author, pages, read, id) {
@@ -52,12 +52,22 @@ function displayBooks() {
       deleteBtn.classList.add("delete-button");
       deleteBtn.textContent = "Delete";
 
+      deleteBtn.addEventListener("click", function () {
+        //Delete the element's bookCard container
+        mainContainer.removeChild(bookCard);
+        //Delete the element from the array
+        myLibrary = myLibrary.filter((item) => item.id != bookCard.dataset.id);
+      });
+
       // Append all children to the bookCard element
       bookCard.appendChild(bookTitle);
       bookCard.appendChild(bookAuthor);
       bookCard.appendChild(bookPages);
       bookCard.appendChild(bookProgress);
       bookCard.appendChild(deleteBtn);
+
+      //Set an id of a book in the array
+      bookCard.setAttribute("data-id", myLibrary[i].id);
 
       // Save to the main container
       mainContainer.appendChild(bookCard);
