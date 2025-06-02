@@ -69,14 +69,17 @@ const bookAuthor = document.querySelector("#author");
 const bookPages = document.querySelector("#pages");
 const bookProgress = document.querySelector("#progress");
 
+//Show the form to create new book
 showButton.addEventListener("click", () => {
   dialog.showModal();
 });
 
+//Close button
 closeButton.addEventListener("click", () => {
   dialog.close();
 });
 
+//Pass new data to create new books
 createButton.addEventListener("click", (event) => {
   event.preventDefault();
   dialog.close(
@@ -93,3 +96,4 @@ createButton.addEventListener("click", (event) => {
     (bookProgress.value = "reading")
   );
 });
+``;
