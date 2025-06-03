@@ -141,3 +141,8 @@ Book.prototype.changeReadingStatus = function (readingStatus) {
   }
   console.log(readingStatus);
 };
+
+addBookToLibrary("The Hobbit", "J.R.R Tolkien", "312", "planning");
+displayBooks();
+addBookToLibrary("Atomic Habits", "James Clear", "320", "reading");
+displayBooks();
