@@ -40,7 +40,7 @@ function displayBooks() {
       // Book Pages
       let bookPages = document.createElement("p");
       bookPages.classList.add("pages");
-      bookPages.textContent = `Author: ${myLibrary[i].pages}`;
+      bookPages.textContent = `Pages: ${myLibrary[i].pages}`;
 
       // Book Progress
       let bookProgress = document.createElement("p");
