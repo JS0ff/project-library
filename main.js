@@ -32,26 +32,31 @@ function displayBooks() {
       let bookTitle = document.createElement("p");
       bookTitle.classList.add("title");
       bookTitle.textContent = `Title: ${myLibrary[i].title}`;
+      bookCard.appendChild(bookTitle);
 
       // Book Author
       let bookAuthor = document.createElement("p");
       bookAuthor.classList.add("author");
       bookAuthor.textContent = `Author: ${myLibrary[i].author}`;
+      bookCard.appendChild(bookAuthor);
 
       // Book Pages
       let bookPages = document.createElement("p");
       bookPages.classList.add("pages");
       bookPages.textContent = `Pages: ${myLibrary[i].pages}`;
+      bookCard.appendChild(bookPages);
 
       // Book Progress
       let bookProgress = document.createElement("p");
       bookProgress.classList.add("progress");
       bookProgress.textContent = `Progress: ${myLibrary[i].read}`;
+      bookCard.appendChild(bookProgress);
 
       //Add Delete button for every card
       let deleteBtn = document.createElement("button");
       deleteBtn.classList.add("delete-button");
       deleteBtn.textContent = "Delete";
+      bookCard.appendChild(deleteBtn);
 
       deleteBtn.addEventListener("click", function () {
         //Delete the element's bookCard container
@@ -64,6 +69,7 @@ function displayBooks() {
       let readStatus = document.createElement("button");
       readStatus.classList.add("status-button");
       readStatus.textContent = "Change Status";
+      bookCard.appendChild(readStatus);
 
       // Change Reading status for every click
       readStatus.addEventListener("click", function () {
@@ -71,14 +77,6 @@ function displayBooks() {
         let currentStatus = myLibrary[i].read;
         bookProgress.textContent = `Progress: ${currentStatus}`;
       });
-
-      // Append all children to the bookCard element
-      bookCard.appendChild(bookTitle);
-      bookCard.appendChild(bookAuthor);
-      bookCard.appendChild(bookPages);
-      bookCard.appendChild(bookProgress);
-      bookCard.appendChild(readStatus);
-      bookCard.appendChild(deleteBtn);
 
       //Set an id of a book in the array
       bookCard.setAttribute("data-id", myLibrary[i].id);
@@ -129,13 +127,9 @@ createButton.addEventListener("click", (event) => {
 
 //Connect prototype function to the Book constructor
 Book.prototype.changeReadingStatus = function (readingStatus) {
-  if (readingStatus === "reading") {
-    readingStatus = "finished";
-  } else if (readingStatus === "finished") {
-    readingStatus = "planning";
-  } else if (readingStatus === "planning") {
-    readingStatus = "reading";
-  }
+  if (readingStatus === "reading") readingStatus = "finished";
+  else if (readingStatus === "finished") readingStatus = "planning";
+  else if (readingStatus === "planning") readingStatus = "reading";
   return readingStatus;
 };
 
