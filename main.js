@@ -15,6 +15,7 @@ function addBookToLibrary(...args) {
   let book = new Book(...args);
   //Pushes to the library array
   myLibrary.push(book);
+  displayBooks();
 }
 
 // Create a function that loops through the array and displays each book on the page
@@ -118,7 +119,6 @@ createButton.addEventListener("click", (event) => {
       bookPages.value,
       bookProgress.value
     ),
-    displayBooks(),
     (bookTittle.value = ""),
     (bookAuthor.value = ""),
     (bookPages.value = ""),
@@ -140,6 +140,5 @@ Book.prototype.changeReadingStatus = function (readingStatus) {
 };
 
 addBookToLibrary("The Hobbit", "J.R.R Tolkien", "312", "planning");
-displayBooks();
 addBookToLibrary("Atomic Habits", "James Clear", "320", "reading");
-displayBooks();
+addBookToLibrary("Atomic Habits", "James Clear", "320", "reading");
