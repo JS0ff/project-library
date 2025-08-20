@@ -66,7 +66,7 @@ function displayBooks() {
       readStatus.textContent = "Change Status";
 
       // Change Reading status for every click
-      readStatus.addEventListener("click", function (event) {
+      readStatus.addEventListener("click", function () {
         myLibrary[i].read = myLibrary[i].changeReadingStatus(myLibrary[i].read);
         let currentStatus = myLibrary[i].read;
         bookProgress.textContent = `Progress: ${currentStatus}`;
