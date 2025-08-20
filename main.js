@@ -131,15 +131,12 @@ createButton.addEventListener("click", (event) => {
 Book.prototype.changeReadingStatus = function (readingStatus) {
   if (readingStatus === "reading") {
     readingStatus = "finished";
-    return readingStatus;
   } else if (readingStatus === "finished") {
     readingStatus = "planning";
-    return readingStatus;
   } else if (readingStatus === "planning") {
     readingStatus = "reading";
-    return readingStatus;
   }
-  console.log(readingStatus);
+  return readingStatus;
 };
 
 addBookToLibrary("The Hobbit", "J.R.R Tolkien", "312", "planning");
