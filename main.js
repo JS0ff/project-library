@@ -1,7 +1,7 @@
 let myLibrary = [];
 
 //Create a constructor for books
-function Book(title, author, pages, read, id) {
+function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -97,7 +97,6 @@ const bookProgress = document.querySelector("#progress");
 showButton.addEventListener("click", () => {
   dialog.showModal();
 });
-
 //Close button
 closeButton.addEventListener("click", () => {
   dialog.close();
