@@ -20,7 +20,6 @@ function addBookToLibrary(...args) {
 
 // Create a function that loops through the array and displays each book on the page
 const mainContainer = document.querySelector("main");
-
 function displayBooks() {
   for (let i = 0; i < myLibrary.length; i++) {
     if (i == myLibrary.length - 1) {
@@ -74,14 +73,11 @@ function displayBooks() {
       // Change Reading status for every click
       readStatus.addEventListener("click", function () {
         myLibrary[i].read = myLibrary[i].changeReadingStatus(myLibrary[i].read);
-        let currentStatus = myLibrary[i].read;
-        bookProgress.textContent = `Progress: ${currentStatus}`;
+        bookProgress.textContent = `Progress: ${myLibrary[i].read}`;
       });
 
-      //Set an id of a book in the array
       bookCard.setAttribute("data-id", myLibrary[i].id);
 
-      // Save to the main container
       mainContainer.appendChild(bookCard);
     }
   }
@@ -129,7 +125,7 @@ createButton.addEventListener("click", (event) => {
 Book.prototype.changeReadingStatus = function (readingStatus) {
   if (readingStatus === "reading") readingStatus = "finished";
   else if (readingStatus === "finished") readingStatus = "planning";
-  else if (readingStatus === "planning") readingStatus = "reading";
+  else readingStatus = "reading";
   return readingStatus;
 };
 
