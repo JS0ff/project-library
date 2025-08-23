@@ -13,7 +13,6 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(...args) {
   // Create new book object from arguments
   let book = new Book(...args);
-  //Pushes to the library array
   myLibrary.push(book);
   displayBooks();
 }
@@ -77,7 +76,6 @@ function displayBooks() {
       });
 
       bookCard.setAttribute("data-id", myLibrary[i].id);
-
       mainContainer.appendChild(bookCard);
     }
   }
@@ -87,6 +85,7 @@ const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("dialog + button");
 const closeButton = document.querySelector("#close-button");
 const createButton = document.querySelector("#create-button");
+const form = document.querySelector("form");
 
 const bookTittle = document.querySelector("#title");
 const bookAuthor = document.querySelector("#author");
@@ -112,9 +111,7 @@ createButton.addEventListener("click", (event) => {
       bookPages.value,
       bookProgress.value
     ),
-    (bookTittle.value = ""),
-    (bookAuthor.value = ""),
-    (bookPages.value = ""),
+    form.reset(),
     //Default value of every book
     (bookProgress.value = "reading")
   );
